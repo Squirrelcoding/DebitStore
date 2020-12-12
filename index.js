@@ -91,6 +91,7 @@ app.post('/getCode', (req, res) => {
 	var g = await getData.retrieveCards(code)
 	res.render("get", {cards: JSON.stringify(g).replace(/}|{|"|:|,|1|2|3|4|5|6|7|8|9|0/g, '')});
 	}
+	
 	f();
 })
 app.post('/addCard', (req, res) => {
