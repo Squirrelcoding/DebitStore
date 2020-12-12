@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>DebitStore</title>
+    <link rel="icon" href="Images/NewCCLogo.png">
+    <link rel="stylesheet" href="/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+		<h2>Edit Number</h2>
+	<form method="POST" action="/number">
+		<input name="code" placeholder="Enter your access Code" type="text">
+    <input name="cardname" placeholder="Enter your cards name" type="text">
+		<input name="newNumber" placeholder="Enter your cards new number" type="text">
+	  <select name="choice">
+			<option value="number">number</option>
+			<option value="cvv">cvv</option>
+    </select>
+		<button type="submit">Submit</button>
+	</form>
+  </body>
+</html>
