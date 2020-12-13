@@ -2,8 +2,8 @@ const admin = require('firebase-admin');
 const serviceAccount = require("./key.json")
 var generateString = require('./generateString.js')
 var express = require('express');
-
 var app = express();
+let answer;
 const bodyParser = require('body-parser');
 app.set('view engine', 'ejs');
 app.set('views', 'views');
@@ -70,7 +70,8 @@ async function getCVV(collection, document, property) {
 app.post('/form', (req, res) => {
 	var stuff = `${req.body.id}`
 	var card = `${req.body.cardname}`
-	async function f() {
+  answer = stuff;
+	async function f() { 
 		var poopy = await getCVV(stuff, card)
 		var poopy2 = await getData.number(stuff, card)
 		var poopy3 = await getData.date(stuff, card)
@@ -84,14 +85,14 @@ app.post('/form', (req, res) => {
 		});
 	}
 	f();
-})
+});
 app.post('/getCode', (req, res) => {
 	async function f() {
 	var code = `${req.body.code}`
 	var g = await getData.retrieveCards(code)
-	res.render("get", {cards: JSON.stringify(g).replace(/}|{|"|:|,|1|2|3|4|5|6|7|8|9|0/g, '')});
+	res.render("get", {cards:Object.keys(g).map(k => g[k]).join('<br>')});
 	}
-	
+
 	f();
 })
 app.post('/addCard', (req, res) => {

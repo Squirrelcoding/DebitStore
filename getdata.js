@@ -76,7 +76,7 @@ function appendKey(dic, value) {
 exports.appendCard = async function f(collection, cardname) {
 	const cityRef = db.collection(collection).doc("cards");
 	const doc = await cityRef.get();		
-	var attendees = doc.data().object;
+	var attendees = doc.data().cards;
 	appendKey(attendees, cardname);
 	setData(collection, "cards", attendees)
 }
