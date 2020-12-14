@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>DebitStore</title>
+    <link rel="icon" href="Images/NewCCLogo.png">
+    <link rel="stylesheet" href="/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+	<h2>Delete Card</h2>
+	<%=poop%>
+	<form method="POST" action="/deleteForm">
+		<input name="code" placeholder="Enter your access Code" type="text">
+  	<input name="confirmcode" placeholder="Enter your access Code again" type="text">
+		<input name="card_delete" placeholder="Enter the card that you want to delete" type="text">
+		<button type="submit">Submit</button>
+	</form>
+  </body>
+</html>

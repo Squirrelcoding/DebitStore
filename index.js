@@ -35,6 +35,9 @@ app.get('/editMenu', function(req, res) {
 app.get('/editCardName', function(req, res) {
 	res.render('editName', { poop: "name" });
 });
+app.get('/deleteCard', function(req, res) {
+	res.render('delete', { poop: "hello" });
+});
 app.get('/getCards', function(req, res) {
 	res.render('get', { cards: "" });
 });
@@ -66,7 +69,22 @@ async function getCVV(collection, document, property) {
 	const doc = await snapshot.get();
 	return doc.data().object.cvv;
 }
-
+app.post('/deleteForm', (req, res) => {
+	var code = `${req.body.code}`
+	var confirmCode = `${req.body.confirmcode}`
+	var cardDeleted = `${req.body.card_delete}`
+	async function deleteCard() {
+	if (code == confirmCode) {
+		await db.collection(code).doc(cardDeleted).delete();
+	}
+	else {
+		res.render("delete", {
+			poop: "Invalid Card name or access Code!"
+		});
+	}
+	}
+	deleteCard();
+})
 app.post('/form', (req, res) => {
 	var stuff = `${req.body.id}`
 	var card = `${req.body.cardname}`
