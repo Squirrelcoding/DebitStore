@@ -16,9 +16,9 @@ app.get('/about', function(req, res) {
 });
 app.get('/create', function(req, res) {
 	var code = generateString.generate(6);
-	res.render('make', { code: code + "Is your code, do not forget it! This is the code that will let YOU have access to YOUR cards!"});
+	res.render('make', { code: code + " Is your code, do not forget it! This is the code that will let YOU have access to YOUR cards!"});
 	var f = {
-		cards: {
+		object: {
 			0: ""
 		}
 	}
@@ -39,7 +39,7 @@ app.get('/deleteCard', function(req, res) {
 	res.render('delete', { poop: "hello" });
 });
 app.get('/getCards', function(req, res) {
-	res.render('get', { cards: "" });
+	res.render('get', { cards: "", acessCode:""});
 });
 app.get('/editCardDate', function(req, res) {
 	res.render('editDate', { poop: "date" });
@@ -76,6 +76,7 @@ app.post('/deleteForm', (req, res) => {
 	async function deleteCard() {
 	if (code == confirmCode) {
 		await db.collection(code).doc(cardDeleted).delete();
+		getData.deleteCardFromList(confirmCode, cardDeleted)
 	}
 	else {
 		res.render("delete", {
@@ -108,7 +109,10 @@ app.post('/getCode', (req, res) => {
 	async function f() {
 	var code = `${req.body.code}`
 	var g = await getData.retrieveCards(code)
-	res.render("get", {cards:Object.keys(g).map(k => g[k]).join('<br>')});
+	res.render("get", {
+		cards:Object.keys(g).map(k => g[k]).join('<br>'),
+		acessCode:"Showing Cards For " + code
+	});
 	}
 
 	f();

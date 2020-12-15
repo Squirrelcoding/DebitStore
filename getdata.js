@@ -93,3 +93,34 @@ exports.retrieveCards = async function getCVV(collection) {
 	const doc = await snapshot.get();
 	return doc.data().object
 }
+//============================================================================================
+const FieldValue = admin.firestore.FieldValue;
+exports.deleteCardFromList = function findNumber(collection, card) {
+	for (var i=0; i < 101; i++) {
+		async function foo() {
+		const citiesRef = db.collection(collection);
+		var k = ('object.' + i)
+		const snapshot = await citiesRef.where(k, '==', card).get();
+		if (snapshot.empty) {
+			console.log('No matching documents.');
+			return;
+		}  
+		snapshot.forEach(doc => {
+			var x = (doc.data().object);
+			console.log(x)
+			const cityRef = db.collection(collection).doc('cards');
+			async function h() {
+			await cityRef.update({
+  			[k]: FieldValue.delete()
+			});
+			console.log('Card Found:', k);
+			}
+			h();
+		});
+		
+		}
+		foo()
+		console.log(i, 'Number(s) attempted...')
+	}
+}
+//============================================================================================
