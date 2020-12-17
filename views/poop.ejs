@@ -24,46 +24,80 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
     <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
     <a href="/index.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Home</a>
     <a href="/create" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white w3-text-white">Create Account</a>
-    <a href="/home" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Get Debit Card Data</a>
+    <a href="/home" class="w3-bar-item w3-button w3-padding-large w3-white">Get Debit Card Data</a>
     <a href="/editMenu" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Edit Debit Card</a>
     <a href="/deleteCard" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Delete Debit Card</a>
 		<a href="/getCards" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">List all Cards</a>
-		<a href="/about" class="w3-bar-item w3-button w3-padding-large w3-white">Add A Debit Card</a>
+		<a href="/about" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Add A Debit Card</a>
   </div>
+	<h2 class="center">Menu/Get Data</h2>
 
-	<h2 class="center">Add Card</h2>
-
-<form method="POST" action="/addCard" class="center">
-    <div class="form-group">
-        <label>Enter The Card Name</label>
-        <input name="cardname" type="text" placeholder="Enter your Cards Name"/>
-        <small class="text-muted">Please Enter your new cards name</small>
-    </div>
-    <div class="form-group">
-        <label>Card Number</label>
-        <input name="cardnumber" type="text" placeholder="Enter your Card's Number"/>
-				<small class="text-muted">Please Enter Your Cards Number</small>
-    </div>
-    <div class="form-group">
-        <label>Card CVV</label>
-        <input name="cardcvv" type="text" placeholder="Enter your cards cvv"/>
-				<small class="text-muted">Please Enter the cards cvv </small>
-    </div>
-    <div class="form-group">
-        <label>Card Date</label>
-        <input name="carddate" type="text" placeholder="Enter the Cards Date"/>
-				<small class="text-muted">Please Enter the cards expiration dater</small>
-    </div>
+<form method="POST" action="/form" class="center">
     <div class="form-group">
         <label>Access Code</label>
-        <input name="code" type="text" placeholder="Enter your Access Code"/>
-				<small class="text-muted">Please Enter your access code</small>
+        <input name="id" type="text" placeholder="Enter your Access Code"/>
+        <small class="text-muted">Dont share your access code! The access Code allows you to access your Debit Cards!</small>
+    </div>
+    <div class="form-group">
+        <label>Card Name</label>
+        <input name="cardname" type="text" placeholder="Enter your Card name"/>
+				<small class="text-muted">Please enter your card name, if you forgot it, then go to <i>List all Cards</i> to see all of your cards</small>
     </div>
     <div class="form-group">
         <button class="button success">Submit data</button>
         <input type="button" class="button" value="Cancel">
     </div>
 </form>
-
+<div class="center">
+  <h2><%=title%></h3>
+	<h3><%=cardname%></h3>
+	<h3><%=name%></h3>
+  <h3><%=number%></h3>
+  <h3><%=date%></h3>
+</div>
 </body>
 </html>
+
+
+
+<!--
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>DebitStore</title>
+    <link rel="icon" href="Images/NewCCLogo.png">
+    <link rel="stylesheet" href="/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+	<h2>Menu/Get Data</h2>
+	<p><d%=cardname%></p>
+	<p><d%=name%></p>
+  <p><d%=number%></p>
+  <p><d%=date%></p>
+	<form method="POST" action="/form">
+		<input name="id" placeholder="Enter your access Code" type="text">
+    <input name="cardname" placeholder="Enter your cards name" type="text">
+		<button type="submit">Submit</button>
+	</form>
+  <a href="/about">Add Card</a>
+	<a href="/editMenu">Edit Card</a>
+	<a href="/create">Create Account</a>
+	<a href="/getCards">List all Cards</a>
+	<a href="/deleteCard">Delete a Card</a>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+-->

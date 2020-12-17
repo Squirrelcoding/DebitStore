@@ -1,24 +1,63 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>DebitStore</title>
-    <link rel="icon" href="Images/NewCCLogo.png">
-    <link rel="stylesheet" href="/style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  </head>
-  <body>
-		<h2>Edit Number</h2>
-	<form method="POST" action="/number">
-		<input name="code" placeholder="Enter your access Code" type="text">
-    <input name="cardname" placeholder="Enter your cards name" type="text">
-		<input name="newNumber" placeholder="Enter your cards new number" type="text">
-	  <select name="choice">
-			<option value="number">number</option>
-			<option value="cvv">cvv</option>
-    </select>
-		<button type="submit">Submit</button>
-	</form>
-  </body>
+<html lang="en">
+<title>DebitStore</title>
+<meta charset="UTF-8">
+<link rel="icon" href="icon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.metroui.org.ua/v4.3.2/css/metro-all.min.css">
+<link rel="stylesheet" href="/html-stuff/style.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+.fa-anchor,.fa-coffee {font-size:200px}
+</style>
+<body>
+<div class="w3-top">
+  <div class="w3-bar w3-black w3-card w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="/index.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Home</a>
+    <a href="/create" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white w3-text-white">Create Account</a>
+    <a href="/home" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white w3-text-white">Get Debit Card Data</a>
+    <a href="/editMenu" class="w3-bar-item w3-button w3-padding-large w3-white">Edit Debit Card</a>
+    <a href="/deleteCard" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Delete Debit Card</a>
+		<a href="/getCards" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">List all Cards</a>
+		<a href="/about" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Add A Debit Card</a>
+  </div>
+	<h2 class="center">Edit Card Number/CVV</h2>
+<form method="POST" action="/number" class="center">
+    <div class="form-group">
+        <label>Access Code</label>
+        <input name="code" type="text" placeholder="Enter your Access Code"/>
+        <small class="text-muted">Dont share your access code! The access Code allows you to access your Debit Cards!</small>
+    </div>
+    <div class="form-group">
+        <label>Card Name</label>
+        <input name="cardname" type="text" placeholder="Enter your Card name"/>
+				<small class="text-muted">Please enter your card name, if you forgot it, then go to <i>List all Cards</i> to see all of your cards</small>
+    </div>
+    <div class="form-group">
+        <label>Access Code</label>
+        <input name="newNumber" type="text" placeholder="Enter your new Number/CVV"/>
+        <small class="text-muted">Please enter your new cards number/cvv</small>
+    </div>
+    <div class="form-group">
+				<select name="choice">
+					<option value="number">number</option>
+					<option value="cvv">cvv</option>
+				</select>
+				<small class="text-muted">Do you want to change the Number or CVV?</small>
+    </div>
+    <div class="form-group">
+        <button class="button success">Submit data</button>
+        <input type="button" class="button" value="Cancel">
+    </div>
+</form>
+</body>
 </html>

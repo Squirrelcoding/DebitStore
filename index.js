@@ -11,6 +11,9 @@ app.use(express.static('views'));
 app.get("/", function(req, res) {
 	res.render("index", { name: '', number: "", date: "", cardname: "" });
 });
+app.get("/home", function(req, res) {
+	res.render("poop", { name: '', number: "", date: "", cardname: "", title:""});
+});
 app.get('/about', function(req, res) {
 	res.render('add', { poop: "hello" });
 });
@@ -85,7 +88,25 @@ app.post('/deleteForm', (req, res) => {
 	}
 	}
 	deleteCard();
+	res.writeHead(301, { Location: 'https://www.debitstore.tk' });
+	res.end("");
 })
+function cc_format(value) {
+    var v = value.replace(/\s+/g, '').replace(/[^0-9]|"/gi, '')
+    var matches = v.match(/\d{4,16}/g);
+    var match = matches && matches[0] || ''
+    var parts = []
+
+    for (i=0, len=match.length; i<len; i+=4) {
+        parts.push(match.substring(i, i+4))
+    }
+
+    if (parts.length) {
+        return parts.join('-')
+    } else {
+        return value
+    }
+}
 app.post('/form', (req, res) => {
 	var stuff = `${req.body.id}`
 	var card = `${req.body.cardname}`
@@ -95,12 +116,12 @@ app.post('/form', (req, res) => {
 		var poopy2 = await getData.number(stuff, card)
 		var poopy3 = await getData.date(stuff, card)
 		var poopy4 = await getData.name(stuff, card)
-		res.render("index", {
-			name: "CVV: " + JSON.stringify(poopy).replace('"', ""),
-			number: "Number: " + JSON.stringify(poopy2).replace('"', ""),
-			date: "Date: " + JSON.stringify(poopy3).replace('"', ""),
-			cardname: "Card Name: " + JSON.stringify(poopy4).replace('"', ""),
-
+		res.render("poop", {
+			name: "CVV: " + JSON.stringify(poopy).replace(/"/g,''),
+			number: "Number: " + JSON.stringify(cc_format(poopy2)).replace(/"/g,''),
+			date: "Expiration Date: " + JSON.stringify(poopy3).replace(/"/g,''),
+			cardname: "Card Name: " + JSON.stringify(poopy4).replace(/"/g,''),
+			title: "Showing Card Data For " + card
 		});
 	}
 	f();
@@ -110,8 +131,8 @@ app.post('/getCode', (req, res) => {
 	var code = `${req.body.code}`
 	var g = await getData.retrieveCards(code)
 	res.render("get", {
-		cards:Object.keys(g).map(k => g[k]).join('<br>'),
-		acessCode:"Showing Cards For " + code
+		cards: Object.keys(g).map(k => g[k]).join('<br>'),
+		acessCode: "Showing Cards For " + code
 	});
 	}
 
@@ -131,7 +152,7 @@ app.post('/addCard', (req, res) => {
 	}
 	setData(codee, namee, data)
 	getData.appendCard(codee, namee)
-	res.writeHead(301, { Location: 'https://debitstore.squirrel777.repl.co/' });
+	res.writeHead(301, { Location: 'https://www.debitstore.tk' });
 	res.end("");
 })
 
@@ -146,7 +167,7 @@ app.post('/number', (req, res) => {
 	else if (numberCVV == 'cvv') {
 		getData.updateCVV(code, name, newNumber)
 	}
-	res.writeHead(301, { Location: 'https://debitstore.squirrel777.repl.co/' });
+	res.writeHead(301, { Location: 'https://www.debitstore.tk' });
 	res.end("");
 });
 app.post('/date', (req, res) => {
@@ -155,7 +176,7 @@ app.post('/date', (req, res) => {
 	var newMonth = `${req.body.newmonth}`
 	var newYear = `${req.body.newyear}`
 	getData.updateDate(codee, name, newMonth, newYear)
-	res.writeHead(301, { Location: 'https://debitstore.squirrel777.repl.co/' });
+	res.writeHead(301, { Location: 'https://www.debitstore.tk' });
 	res.end("");
 });
 app.post('/name', (req, res) => {
@@ -163,7 +184,7 @@ app.post('/name', (req, res) => {
 	var oldname = `${req.body.oldName}`
 	var newname = `${req.body.newName}`
 	getData.updateName(code, oldname, newname)
-	res.writeHead(301, { Location: 'https://debitstore.squirrel777.repl.co/' });
+	res.writeHead(301, { Location: 'https://www.debitstore.tk' });
 	res.end("");
 })
 //setData('Test', 'Test-Express', x);
