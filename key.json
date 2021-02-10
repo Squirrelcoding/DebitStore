@@ -1,12 +1,3 @@
 {
-  "type": "service_account",
-  "project_id": "poopnet-4fb22",
-  "private_key_id": "cd9cf25bae65f1b871fb06f3f6500f2bd5845a27",
-  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDJRaAYXvOVlU13\n+aaNldzeYq08pqGGkKR3Rf5cWK9hRVcnSGr62csR1CKC952g5tfzYp89Lfx2qMFK\nN45Bko4dlLrwBE+kCcb3HbEPfSc9BZLT17TSJMmalRnqaQP/9lTYz2SHa4YwnA13\nE7h4/tKPxF27wd8D9Nzb5/XZIuNqvNQS1rJ+PEkYnznJ3WxQNr2uB8/piWqiVRoc\nh6TZ60kN37TXhIyqyJ/xKQs9yG7wIKgh5S+SdAqNlvif2rK3PMSAxyyigkI+lBqU\nQKbAviQVn+UEnRHwi2IbVp1mMnR6oOoIfpnq2tfh50+oAuIFr8NjWaYKhqvddIBo\nJAI/S7/FAgMBAAECggEAOMKr3XOZmgua50S+VZt3yDdnx3zufHZ6CzDwBLb17qaR\nZ4Cius+E1yhN+0U9bMztBbRAWA6J7iS1Lerw8UkVTv5Mobd1hjtDoxj6f/W5hRn3\nSErCsaiyOifmQRcQi7S6RNJn9VC7bSX1Himvkl+6ndSw4mxQKlt5lYKa8HtISyco\n7H44+GedPweZqclDELjXFG4T5xQ9h7pCA803N57ya7kL+nsKxnIhdt/gLjKQfCiw\njd8oj9wG99c3QkwsNRFYsMRcQCHMm4tdkf2ktlFGZNh3XcQDJ8HTUhGYmDXRD+02\nAFUlPXmIhxFgu/cZl3OgdOKYL7CQipVdpTYbD+IT2QKBgQD2IkAI/wUZaALC5r74\n1FW/F1fxk6WM3fwBYGUKDa0TRm33aOQt/qdRcCohloX62zyp14b+DbpJfPuRGo4u\nko3IcV291XIN16NXKNL1eP4O2UrBNdUADHQrGCzwC5ruaaZP7/vslihe+fIbBPU6\nCZ570Hkwv/8PBvYhLZ04fkuzawKBgQDRVwRYICjlhWIkCYCBshEImXDzgxI0T3k8\nOJ0eijmxp+0TgsCK+dnj+S3MdCpl6mDlBJbIrXfPeNl4glezeEvXGnNdLOLRSouw\nUFGJccaABxOCaLS4f272Pr0LxGHt3yNafzAvP2IUSCSGQgqBFR8avmkn4tQRlqsG\nhE1UPVBVjwKBgQDWDJ8ns7AZkiyklssJ1o7jakee3UohoYNhJxV3ksErfBpyCRQ3\nM7kKx8K8Bw1pRXQSOE87bXDOLBUS8ccolWccJArj5lYT165DREuCEsDO5QVv1YLx\nUeNM/u9FqrIIGHT8G7Y437UoM7Hq8XraCDd9caWTUcVcqi8uV17dHGh1FQKBgFvT\nCpHJUYcUEe9yx46cWAJoo/X8uWB+t9QllS3PPe1ilohnYyPS4rOwGlnDXtGjlGsA\nr09JX/N+tA27RtLvYnzxGkd1p+xcAZgOMyXR5VtFP1aFrTf8leSnsm7V7orTxQMu\nJSmkaNYyqurFTyw94o3tldysD4/DgjNylyTrXDCbAoGBAJihj2g2T7TX2ELnNe88\nCMr4Dqr8LLIIRVVp/F+ZEdBpRhd9v31gDXALj5ZSZ6rtzJyQ34odV6cY8uOh/hSm\nhrD9Ycy851eTZ6xngJXlXhPQYUYoJmAhP6NUYkX66X5z8vDDncMvWfdPVQPIpC6q\n9PXKr1hHyGXh6U4HDlUqr1xz\n-----END PRIVATE KEY-----\n",
-  "client_email": "firebase-adminsdk-h8k8z@poopnet-4fb22.iam.gserviceaccount.com",
-  "client_id": "102594196825908562358",
-  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
-  "token_uri": "https://oauth2.googleapis.com/token",
-  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-h8k8z%40poopnet-4fb22.iam.gserviceaccount.com"
+  "lol": "u thought i was gonna expose the key?"
 }
