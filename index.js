@@ -187,14 +187,10 @@ app.post('/name', (req, res) => {
 	res.writeHead(301, { Location: 'https://www.debitstore.tk' });
 	res.end("");
 })
-//setData('Test', 'Test-Express', x);
 async function setData(collection, document, object) {
 	const docRef = db.collection(collection).doc(document);
 	await docRef.set({
 		object
 	});
 }
-//u0rAY7
-//Poop
-//lolpoopy
-//getData.updateName("u0rAY7", "Poop", "Caca") 
+
