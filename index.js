@@ -58,7 +58,7 @@ app.listen(3000, function(req, res) {
 
 admin.initializeApp({
 	credential: admin.credential.cert(serviceAccount),
-	databaseURL: "https://poopnet-4fb22.firebaseio.com"
+	databaseURL: "---No database url for you.---"
 });
 var getData = require('./getdata.js')
 const db = admin.firestore();
