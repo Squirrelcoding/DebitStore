@@ -3,4 +3,4 @@ DebitStore is a website that stores debit Card information with an account syste
 
 Also the dependancy files were removed.
 
-You can also check out the [original website](https://debitstore.softsquirrel.tk/)! 
+You can also check out the [original website](https://www.debitstore.tk/)! 
